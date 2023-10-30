@@ -1,0 +1,250 @@
+:root {
+    --poppins: 'Poppins', sans-serif;
+    --lato: 'Lato', sans-serif;
+
+    --light: #F9F9F9;
+    --blue: #3C91E6;
+    --light-blue: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: #342E37;
+    --red: #DB504A;
+    --yellow: #FFCE26;
+    --light-yellow: #FFF2C6;
+    --orange: #FD7238;
+    --light-orange: #FFE0D3;
+    --purple: #655DBB;
+    --light-purple: #DFCCFB;
+    --green: #18978F;
+    --light-green: #DEF5E5;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+body.dark {
+    --light: #0C0C1E;
+    --grey: #060714;
+    --dark: #FBFBFB;
+}
+
+.no-border {
+    border: 0;
+  }
+
+.btn-outline-line {
+    border-color: #06C755;
+    color: #06C755;
+}
+
+.btn-outline-line:hover {
+    background-color: #06C755;
+    color: white;
+}
+
+/* Border round */
+.border-round-bg {
+
+    display: grid;
+    display: -ms-grid;
+    /* min-height: 500px; */
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+
+    max-width: none;
+    /* Remove max-width for responsiveness */
+    /* display: flex; */
+    /* justify-content: center; Center the content horizontally */
+    /* align-items: flex-start; Align content to the top */
+    flex-wrap: wrap;
+    /* Allow items to wrap */
+}
+
+/* Quize  */
+input[type="radio"] {
+    height: 25px;
+    width: 25px;
+    padding-bottom: 10px;
+  }
+  
+  input[type="radio"] + label {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding-top: 5px;
+  }
+
+/* Box Info */
+
+.box-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 36px;
+}
+
+.box-info li {
+    padding: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+}
+
+.box-info li .bx {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-info li:nth-child(1) .bx {
+    background: var(--light-blue);
+    color: var(--blue);
+}
+
+.box-info li:nth-child(2) .bx {
+    background: var(--light-yellow);
+    color: var(--yellow);
+}
+
+.box-info li:nth-child(3) .bx {
+    background: var(--light-orange);
+    color: var(--orange);
+}
+
+.box-info li:nth-child(4) .bx {
+    background: var(--light-green);
+    color: var(--green);
+}
+
+.box-info li .text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.box-info li .text p {
+    color: var(--dark);
+}
+
+/* Lesson Card */
+.lesson-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.lesson-card li {
+    position: relative;
+    /* Add this to establish a positioning context */
+    padding: 15px;
+    background: var(--light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+}
+
+.lesson-card li .bx {
+    width: 80px;
+    height: calc((4 / 5) * 100%);
+    border-radius: 10px;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Add this to ensure the image stays within the container */
+}
+
+.lesson-card li .bx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain the aspect ratio while covering the container */
+}
+
+
+.lesson-card li .text {
+    flex: 1;
+    /* Use flex: 1 to make the text occupy remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align text to the left */
+    justify-content: space-between;
+    /* Add space between title and button */
+}
+
+.lesson-card li .text h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+    margin: 0;
+    margin-bottom: 10px;
+    /* Add margin-bottom to separate title and button */
+}
+
+.lesson-card li .btn-container {
+    align-self: flex-end;
+    /* Align button to the right */
+}
+
+/* Media Query for Larger Screens (e.g., Desktops) */
+@media (min-width: 992px) {
+    .lesson-card {
+        grid-template-columns: repeat(3, minmax(240px, 1fr));
+    }
+}
+
+/* Media Query for Tablet Screens */
+@media (max-width: 991px) {
+    .lesson-card {
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 740px) {
+    .lesson-card {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 576px) {
+    .lesson-card {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+}
+
+
+
+
+/* Water Mask */
+@import url(https://fonts.googleapis.com/css?family=Denk+One);
+@import url(https://fonts.googleapis.com/css?family=Arimo);
+.watermask{
+	-webkit-transform: rotate(331deg);
+	-moz-transform: rotate(331deg);
+	-o-transform: rotate(331deg);
+	transform: rotate(331deg);
+	font-size: 12em;
+	color: rgba(72, 255, 5, 0.229);
+	position: absolute;
+	font-family: 'Denk One', sans-serif;
+	text-transform:uppercase;
+	padding-left: 10%;
+}
